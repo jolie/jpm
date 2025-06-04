@@ -19,7 +19,7 @@ export default class HooksPrePack extends Command {
   static override examples = ['jpm hooks prepack'];
 
   public async run(): Promise<void> {
-    const matches :  string[] = await glob(join(process.cwd(), '**', 'pom.xml'), {windowsPathsNoEscape: isWindows()});
+    const matches :  string[] = await glob(join(process.cwd(), 'pom.xml'), {windowsPathsNoEscape: isWindows()});
 
     for (const match of matches) {
       this.log(
