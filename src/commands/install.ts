@@ -29,8 +29,8 @@ export default class Install extends Command {
   static override examples = [
     `$ jpm install
 scan entries from package.json and download all dependencies`,
-    `$ jpm install @jolie/websocket
-add @jolie/websocket into the project`,
+    `$ jpm install @jolie/websockets
+add @jolie/websockets into the project`,
     `$ jpm install org.jsoup:jsoup
 add maven's jsoup into the project`,
     `$ jpm install jolie-jsoup@latest
