@@ -15,7 +15,7 @@ $ npm install -g @jolie/jpm
 $ jpm COMMAND
 running command...
 $ jpm (--version)
-@jolie/jpm/3.1.0 linux-x64 node-v22.14.0
+@jolie/jpm/3.2.0 linux-x64 node-v22.14.0
 $ jpm --help [COMMAND]
 USAGE
   $ jpm COMMAND
@@ -50,7 +50,7 @@ EXAMPLES
       add jpm related fields to package.json in specify path
 ```
 
-_See code: [src/commands/init.ts](https://github.com/jolie/jpm/blob/v3.1.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/jolie/jpm/blob/v3.2.0/src/commands/init.ts)_
 
 ## `jpm install [TARGET]`
 
@@ -74,8 +74,8 @@ EXAMPLES
   $ jpm install
   scan entries from package.json and download all dependencies
 
-  $ jpm install @jolie/websocket
-  add @jolie/websocket into the project
+  $ jpm install @jolie/websockets
+  add @jolie/websockets into the project
 
   $ jpm install org.jsoup:jsoup
   add maven's jsoup into the project
@@ -84,7 +84,7 @@ EXAMPLES
   add jolie-jsoup with latest tag into the project
 ```
 
-_See code: [src/commands/install.ts](https://github.com/jolie/jpm/blob/v3.1.0/src/commands/install.ts)_
+_See code: [src/commands/install.ts](https://github.com/jolie/jpm/blob/v3.2.0/src/commands/install.ts)_
 
 ## `jpm remove TARGET`
 
@@ -107,5 +107,5 @@ EXAMPLES
       Remove jolie-jsoup from the dependencies
 ```
 
-_See code: [src/commands/remove.ts](https://github.com/jolie/jpm/blob/v3.1.0/src/commands/remove.ts)_
+_See code: [src/commands/remove.ts](https://github.com/jolie/jpm/blob/v3.2.0/src/commands/remove.ts)_
 <!-- commandsstop -->
