@@ -1,4 +1,4 @@
-import { Command } from '@oclif/core';
+import { Args, Command } from '@oclif/core';
 import chalk from 'chalk';
 import { join } from 'path';
 import { which, exec } from 'shelljs';
@@ -16,10 +16,23 @@ export default class HooksPrePack extends Command {
     'mvn package'
   )} before continue.`;
 
-  static override examples = ['jpm hooks prepack'];
+  static override examples = [
+    'jpm hooks prepack',
+    'jpm hooks prepack ./my-maven-project'
+  ];
+
+  static override args = {
+    directory: Args.string({ 
+      description: 'Directory that contains pom.xml',
+      default: '.'
+    }),
+  };
 
   public async run(): Promise<void> {
-    const matches :  string[] = await glob(join(process.cwd(), 'pom.xml'), {windowsPathsNoEscape: isWindows()});
+    const { args } = await this.parse(HooksPrePack);
+    const searchDir = join(process.cwd(), args.directory);
+    
+    const matches :  string[] = await glob(join(searchDir, 'pom.xml'), {windowsPathsNoEscape: isWindows()});
 
     for (const match of matches) {
       this.log(
